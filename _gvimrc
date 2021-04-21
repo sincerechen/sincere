@@ -1,0 +1,48 @@
+let mapleader=" "
+set nocompatible
+filetype off
+syntax on
+set number
+set cursorline
+set showcmd
+set wrap
+set wildmenu
+set hlsearch
+set incsearch
+set smartcase
+set report=0
+
+"show space
+set list
+set listchars=tab:>-,trail:-
+
+map S :w<CR>
+map Q :q<CR>
+map R :source %<CR>
+
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sk :set nosplitbelow<CR>:split<CR>
+map sj :set splitright<CR>:split<CR>
+
+noremap <LEADER><CR> :nohlsearch<CR>
+nnoremap W <C-w>w
+noremap J 5j
+noremap K 5k
+inoremap mm <ESC>
+:inoremap ( ()<ESC>i
+:inoremap { {<CR>}<ESC>O
+:inoremap [ []<ESC>i
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+:inoremap < <><ESC>i
+
+set shellslash
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin('~/vimfiles/bundle')
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'preservim/nerdtree'
+Plugin 'preservim/nerdcommenter'
+call vundle#end()
+filetype plugin indent on
